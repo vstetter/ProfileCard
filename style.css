@@ -23,6 +23,7 @@ body {
 
 .Me {
   display: block;
+  border-radius: 100%; 
   width: 150px;
   -webkit-transition:-webkit-transform 2s;
   transition:transform 2s;
@@ -57,7 +58,7 @@ width: 50%;
   transition-property: background-color, color;
   transition-duration: 2s;
   transition-timing-function: ease;
-  color:#ff7148;
+  color:white;
   background-color: #9381c6;
 
 }
@@ -82,20 +83,29 @@ h3 {
 
 }
 
-/* .MyKids img {
-  display: inline-block;
-  vertical-align: top;
-  padding: 30px;
-  width: 20%;
-} */
+#Luke img, #Sophia img {
+  width: 150px;
+}
 
-/* .Kids {
-  width: 50%;
+.LukeSophia li {
+  float: left;
+  position: relative;
   display: inline-block;
-  vertical-align: top;
-  list-style-type: none;
-  margin-left: 90px;
-} */
+  min-width: 30px;
+  width: 40px;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #ff7148;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.LukeSophia li:hover {
+  width: 150px;
+  background-color: black;}
+  #Luke {background: blue;}
+  #Sophia {background: pink;}
+}
 
 
 .PreferredDrink {
@@ -103,16 +113,12 @@ h3 {
   margin: 0px auto;
 }
 
-/* .PreferredDrink img {
-  display: inline-block;
-  vertical-align: top;
-  padding: 30px;
-} */
+.wine #FullGlass {
+  width: 1%;
+  -webkit-animation: FullGlassa 3s alternate ease backwards infinite;
+}
 
-/* .Drink {
-  width: 50%;
-  display: inline-block;
-  vertical-align: top;
-  list-style-type: none;
-  margin-left: 90px;
-} */
+@-webkit-keyframes FullGlassa {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
