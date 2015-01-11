@@ -8,89 +8,82 @@ body {
 .container {
   background-color: #c7d0d5;
   border-radius: 5%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 5%;
   color:#333D46;
-  height: 700px;
+  margin: 30px auto;
+  padding: 10px;
+  width: 700px;
+  height: 750px;
 }
 
-
-.top {
-  max-width: 700px;
-  margin: 0px auto;
+.top, .middle, .bottom {
+  width: 90%;
+  margin: 10px auto;
 }
 
-.Me {
-  display: block;
-  border-radius: 100%;
-  width: 180px;
-  -webkit-transition:-webkit-transform 2s;
-  transition:transform 2s;
+li {
+  font-family: 'Coustard', serif;
+  font-size: 20px;
+  font-color: black;
+  list-style-type: none;
 }
 
-.Me:hover {
-  display: block;
-  width: 180px;
-  -webkit-transform:rotate(360deg);
-  transform:rotate(360deg);
-}
-
-.Name {
-
-width: 50%;
-float: right;
-clear: left;
-margin-top: -170px;
-
-}
-
-.FullName h1 {
-  position: relative
-  border: 10px;
-  transition-property: background-color, color;
-  transition-duration: 2s;
-  transition-timing-function: ease;
-  color: #333D46;
-  background-color: none;
-}
-
-.FullName h1:hover {
-  position: relative
-  border: 10px;
-  transition-property: background-color, color;
-  transition-duration: 2s;
-  transition-timing-function: ease;
-  color:#efecca;
-  background-color: #002f2f;
-
-}
-
-
-}
-h1 {
+p, #FullName, #Mykids, #PreferredDrink {
   font-family: 'Limelight';
   font-size: 30px;
   font-color: black;
 }
 
-h3 {
-  font-family: 'Coustard', serif;
+.Me, .Name {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+
+.Me img {
+  border-radius: 100%;
+  width:50%;
+  -webkit-transition:-webkit-transform 2s;
+  transition:transform 2s;
+}
+
+.Me img:hover {
+  border-radius: 100%;
+  width: 50%;
+  -webkit-transform:rotate(360deg);
+  transform:rotate(360deg);
 }
 
 
-.MyKids h1{
-/*   max-width: 700px;
-height: 20px;
-margin: 0px auto; */
-width: 50%;
-margin-left: 400px;
-padding: 40px;
-
-
+#FullName {
+  position: relative;
+  color: #333D46;
+  border-radius: 5px;
+  background-color: none;
+  -webkit-transition: background-color, color, -webkit-transform 2s ease;
+  transition: background-color, color, transform 2s ease;
 }
+
+#FullName:hover {
+  position: relative;
+  color:#efecca;
+  background-color: #002f2f;
+  -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+}
+
+
+/* END TOP SECTION */
+
+
+.LukeSophia, #Mykids {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+
 
 #Luke img, #Sophia img {
+  border-radius: 100%;
   width: 150px;
 }
 
@@ -103,7 +96,6 @@ padding: 40px;
   width: 50px;
   overflow: hidden;
   padding: 20px;
-  background-color: #ff7148;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 
@@ -112,61 +104,64 @@ padding: 40px;
 .LukeSophia li:hover {
   width: 150px;
   background-color: black;}
-  #Luke {background: blue;}
+  #Luke {background: #93b1c6;}
   #Sophia {background: pink;}
 }
 
 
-.PreferredDrink {
-  max-width: 700px;
-  margin: 0px auto;
+/* END MIDDLE SECTION */
+
+
+
+.wine, #PreferredDrink {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+
+.wine {
+  width: 350px;
+}
+
+#PreferredDrink{
+  margin-left: 50%;
+  -webkit-animation: move 3s ease-in-out infinite;
+  animation: move 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes move {
+  0% {-webkit-transform: rotate(0) translatey(0);}
+  33% {-webkit-transform: rotate(-5deg) translatey(-10px);}
+  66% {-webkit-transform: rotate(10deg) translatey(20px);}
+  100% {-webkit-transform: rotate(0) translatey(0);}
 }
 
 
 .wine li {
-  display: inline-block;
+  position: absolute;
 }
 
-
-.wine #FullGlass {
-
-  -webkit-animation: FullGlassa 3s ease;
+#FullGlass, #EmptyGlass {
+  width: 11%;
 }
-#FullGlass, #HalfFullGlass, #EmptyGlass {
-  width: 16%;
-  height:
+
+#FullGlass {
+   z-index: 100;
+  -webkit-animation: FullGlassa 3s ease-out forwards infinite;
+  animation: FullGlassa 3s ease-out forwards infinite;
 }
+
 @-webkit-keyframes FullGlassa {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
-.wine #HalfFullGlass {
-
-  -webkit-animation: HalfFullGlassa 3s 3s ease;
-}
-
-@-webkit-keyframes HalfFullGlassa {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-.wine #EmptyGlass {
-
-  -webkit-animation: EmptyGlassa 3s 6s ease;
+#EmptyGlass {
+  -webkit-animation: EmptyGlassa 3s .5s ease-in backwards infinite;
+  animation: EmptyGlassa 3s .5s ease-in backwards infinite;
 }
 
 @-webkit-keyframes EmptyGlassa {
   0% {opacity: 0;}
   100% {opacity: 1;}
-}
-
-
-.PreferredDrink {
-  margin-bottom: -20px;
-}
-.PreferredDrink h1 {
-  width: 50%;
-  margin-left: 420px;
-  margin-top: -200px;
 }
